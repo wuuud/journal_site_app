@@ -14,7 +14,7 @@ class ArticleSeeder extends Seeder
      */
     public function run()
     {
-        +         // paramに配列を代入
+                // paramに配列を代入
         $param = [
             [
                 'title' => 'ゆで過程におけるスパゲティの芯の状態変化とアルデンテの評価',
