@@ -14,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //article モデルから全てのデータを取ってくる
+        //1-① article モデルから全てのデータを取ってくる
         $articles = Article::all();
         return view('articles.index', ['articles' => $articles]);
     }
@@ -47,7 +47,10 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        //1-② article モデルからfind(数字を一つ)を探す
+        //view articleは単数形。一つ選択するため。
+        $article = Article::find($id);
+        return view('articles.show', ['article' => $article]);
     }
 
     /**
