@@ -18,7 +18,6 @@ class ArticleController extends Controller
         $articles = Article::all();
         return view('articles.index', ['articles' => $articles]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
