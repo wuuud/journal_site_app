@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+//1.一覧と詳細
+//1-1.get  index
+//1-2.get  show
