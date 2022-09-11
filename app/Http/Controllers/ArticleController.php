@@ -72,7 +72,8 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        $article = Article::find($id);
+        return view('articles.edit', ['article' => $article]);
     }
 
     /**
@@ -84,7 +85,18 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        /// インスタンスの作成
+        $article = Article::find($id);
+
+        // 値の更新
+        $article->title = $request->title;
+        $article->body = $request->body;
+
+        // インスタンスの更新
+        $article->save();
+
+        // 更新したらindexに戻る
+        return redirect('/articles');
     }
 
     /**
@@ -95,6 +107,12 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //インスタンス生成
+    $article = Article::find($id);
+    //データの削除
+    $article->delete();
+
+    //削除したページには戻れないので、一覧に戻る
+    return redirect('/articles');
     }
 }
