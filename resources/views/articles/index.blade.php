@@ -14,7 +14,7 @@
     @foreach ($articles as $article)
         <p>
             {{-- URL article1等で出力される --}}
-            <a href="articles/{{ $article->id }}">
+            <a href="/articles/{{ $article->id }}">
                 {{ $article->title }}
             </a>
         </p>
