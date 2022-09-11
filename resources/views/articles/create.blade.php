@@ -7,13 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>論文詳細</h1>
+    <h1>新規論文投稿</h1>
     
-    <h3>タイトル：{{ $article->title }}</h3>
-    <p>{{ $article->body }}</p>
-    
-    <button onclick="location.href='/articles'">一覧へ戻る</button>
 
+    {{-- storeのURL --}}
+    <form action="/articles" method="post">
+        @csrf
+        <p>
+            <label for="title">論文タイトル</label><br>
+            <input type="text" name="title" value="{{ old('title') }}">
+        </p>
+        <p>
+            <label for="body">本文</label><br>
+            <textarea name="body" class="body">{{ old('body') }}</textarea>
+        </p>
 
+        <input type="submit" value="登録">
+    </form>
     </body>
 </html>
