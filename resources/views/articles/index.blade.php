@@ -10,7 +10,7 @@
 
 <body>
     <h1>論文一覧</h1>
-    
+
     @foreach ($articles as $article)
         <p>
             {{-- URL article1等で出力される --}}
