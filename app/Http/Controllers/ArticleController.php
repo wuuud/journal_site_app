@@ -14,7 +14,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        //1-① article モデルから全てのデータを取ってくる
+        //1-①article モデルから全てのデータを取ってくる
         $articles = Article::all();
         return view('articles.index', ['articles' => $articles]);
     }
